@@ -35,7 +35,7 @@
             <td><img src="assets\images\{{p.imageUrl}}" style="width:50px; border: 1px solid"></td>
             <td>{{p.cartName}}</td>
             <td>{{p.price}}</td>
-            <td>{{p.quality}}<button (click)=Tang(p.cartID) type="button" class="btn btn-success" style="margin: 5px;">+</button><button (click)=Giam(p.cartID) type="button" class="btn btn-danger" style="margin: 5px;">-</button></td>
+            <td><span style="padding: 20px;">{{p.quality}}</span><button (click)=Tang(p.cartID) type="button" class="btn btn-success" style="margin: 5px;">+</button><button (click)=Giam(p.cartID) type="button" class="btn btn-danger" style="margin: 5px;">-</button></td>
             <td><button type="button" class="btn btn-info" style="margin: 10px;">View</button>
               <button type="button" class="btn btn-danger" style="margin: 10px;">Delete</button>
           </tr>

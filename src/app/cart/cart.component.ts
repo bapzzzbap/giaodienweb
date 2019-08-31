@@ -13,14 +13,21 @@ export class CartComponent implements OnInit {
         "cartName": "LapTop",
         "price": 30000,
         "quality": 0,
-        "imageUrl": "choi.jpg"
+        "imageUrl": "maytinh.jpg"
     },
     {
       "cartID": 2,
       "cartName": "Smart Phone",
       "price": 25000,
       "quality": 0,
-      "imageUrl": "choi.jpg"
+      "imageUrl": "dienthoai.jpg"
+    },
+    {
+      "cartID": 3,
+      "cartName": "Televison",
+      "price": 5054100,
+      "quality": 0,
+      "imageUrl": "tivi.jpg"
     },]
   constructor() { }
 
