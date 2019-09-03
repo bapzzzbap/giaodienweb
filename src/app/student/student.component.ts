@@ -23,7 +23,7 @@ export class StudentComponent implements OnInit {
     fullName: 'Phan thị nở',
     birthday: '20-12-1999',
     gender: 'Nữ',
-    photo :'khabanh.jpg',
+    photo :'nu.png',
     mark: 8.5
     },
     {

@@ -52,7 +52,7 @@ for(let i =0; i<this.Listcart.length;i++)
 Giam(id){
   for(let i =0; i<this.Listcart.length;i++)
   {
-    if(this.Listcart[i].cartID===id){
+    if(this.Listcart[i].cartID===id && this.Listcart[i].quality>0){
       this.Listcart[i].quality--;
     }
   }
