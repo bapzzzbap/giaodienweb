@@ -28,7 +28,7 @@
                 <tr *ngFor='let p of Listproducts'>
                     <td><img src="assets\images\{{p.imageUrl}}" *ngIf="isShow" style="width:100px; border: 1px solid"></td>                   
                     <td>{{p.productId}}</td>
-                    <td>{{p.productName}}</td>
+                    <td><a [routerLink]="['/products',p.productId]">{{p.productName}}</a></td>
                     <td>{{p.productCode}}</td>
                     <td>{{p.releaseDate}}</td>
                     <td>{{p.description}}</td>
