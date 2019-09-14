@@ -1,31 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductdetailComponent } from './productdetail/productdetail.component';
-import { ListproductComponent } from './listproduct/listproduct.component';
-import { UserComponent } from './user/user.component';
-import { CartComponent } from './cart/cart.component';
-import { StudentComponent } from './student/student.component';
+import { ListstudentsComponent } from './liststudents/liststudents.component';
 import { RouterModule } from '@angular/router';
-
+import { StudentDetalisComponent } from './student-detalis/student-detalis.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductdetailComponent,
-    ListproductComponent,
-    UserComponent,
-    CartComponent,
-    StudentComponent
+    ListstudentsComponent,
+    StudentDetalisComponent
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     RouterModule.forRoot([ 
-      { path: '', 	component: ListproductComponent }, 
-      {path: 'products', component:ListproductComponent},
-      { path: 'products/:productId', component: ProductdetailComponent },
-      { path: '**', redirectTo: 'products', pathMatch: 'full' },
+      { path: '', 	component: ListstudentsComponent }, 
+      {path: 'liststudents', component:ListstudentsComponent},
+      { path: 'liststudents/:ID', component: StudentDetalisComponent },
+      { path: '**', redirectTo: '', pathMatch: 'full' },
      
     ]) ,
     
@@ -33,4 +27,4 @@ import { RouterModule } from '@angular/router';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { };
+export class AppModule { }
