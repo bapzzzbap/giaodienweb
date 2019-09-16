@@ -1,0 +1,108 @@
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+    <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+  </div>
+      <div class="container" id="main">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      <br />
+      <br />
+      <ul class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li>User</li>
+  </ul>
+  
+  <div class="row">
+      <div class="col-6">
+      <span>Shows </span>
+     <select class="form-control-lg">
+    <option value="" disabled selected>Choose</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+      <span> emtries</span>
+      </div>
+      <div class="col-6">
+      <button type="button" class="btn btn-primary" style="margin: 5px;">Excel</button>
+      <button type="button" class="btn btn-primary" style="margin: 5px;">PDF</button>
+      <span class="fa fa-search form-control-feedback" style="margin: 5px;"></span>
+      <input type="text" placeholder="Search" style="margin: 5px;">
+      <button type="button" class="btn btn-primary" style="margin: 5px;">+ Add Employee</button>
+      </div>
+  </div>
+      
+      
+      
+      
+      
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="main-box clearfix">
+                  <div class="table-responsive">
+                      <table class="table user-list">
+                          <thead>
+                              <tr>
+                                  <th><span>Id</span></th>
+                                  <th><span>Firstname</span></th>
+                                  <th><span>Lastname</span></th>
+                                  <th><span>Email</span></th>
+                                  <th><span>Action</span></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor='let p of Listuser'>
+                                  <td>
+                                        {{p.Id}}
+                                  </td>
+                                  <td>
+                                        {{p.Firstname}}
+                                  </td>
+                                  <td>
+                                        {{p.Lastname}}
+                                  </td>
+                                  <td>
+                                        {{p.Email}}
+                                  </td>
+                                  <td style="width: 20%;">
+                                      <a href="#" class="table-link">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-square fa-stack-2x"></i>
+                                              <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </a>
+                                      <a href="#" class="table-link">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-square fa-stack-2x"></i>
+                                              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </a>
+                                      <a href="#" class="table-link danger">
+                                          <span class="fa-stack">
+                                              <i class="fa fa-square fa-stack-2x"></i>
+                                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                          </span>
+                                      </a>
+                                  </td>
+                              </tr>
+                            
+                              
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                  Showing 1 to 5 the Exeam
+                  <ul class="pagination pull-right">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          
+      </div>

@@ -1,0 +1,41 @@
+<div class="card">
+    <h5 class="card-header">List Product</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                Fitter by:<br>
+                <h1>Fitter by:</h1>
+            </div>
+            <div class="col-2">
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                <br>
+            </div>
+        </div>
+        <table class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    <th><button type="button" class="btn btn-primary" (click)='show()'>Hien image</button></th>
+                    <th>Id</th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>5 Star Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let p of Listproducts'>
+                    <td><img src="assets\images\{{p.imageUrl}}" *ngIf="isShow" style="width:100px; border: 1px solid"></td>                   
+                    <td>{{p.productId}}</td>
+                    <td><a [routerLink]="['/products',p.productId]">{{p.productName}}</a></td>
+                    <td>{{p.productCode}}</td>
+                    <td>{{p.releaseDate}}</td>
+                    <td>{{p.description}}</td>
+                    <td>{{p.price}}</td>
+                    <td><span class="rating-static rating-{{p.starRating}}"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

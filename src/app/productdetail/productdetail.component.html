@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+      Leaf Rake
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-2">
+          Name :<br>
+          Code :<br>
+          Description :<br>
+          Availabillty :<br>
+          Price :<br>
+          5 Start Rating:<br>
+        </div>
+        <div class="col-4">
+          {{product.productName}}<br>
+          {{product.productCode}}<br>
+          {{product.description}}<br>
+          {{product.releaseDate}}<br>
+          {{product.price}}<br>
+          {{product.starRating}}<br>
+        </div>
+        <div class="col-6">
+          <img src="assets\images\{{product.imageUrl}}"  style="width: 30%;">
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+    </div>
+  </div>
