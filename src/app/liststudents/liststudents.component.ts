@@ -9,9 +9,9 @@ export class ListstudentsComponent implements OnInit {
 
   public employeedata = [];
   // Pagination parameters.
-  p: Number = 1;
-  count: Number = 3;
-  page: Number = 1;
+  p: number = 10;
+  count: number = 3;
+  page: number = 1;
   constructor() {
 
     console.log('Application loaded. Initializing data.');
@@ -23,13 +23,20 @@ export class ListstudentsComponent implements OnInit {
     { 'ID': '6', 'FirstMidName': 'Peggy', 'LastName': 'Justice', 'EnrollmentDate': '2001-09-01' },
     { 'ID': '7', 'FirstMidName': 'Laura', 'LastName': 'Norman', 'EnrollmentDate': '2003-09-01' },
     { 'ID': '8', 'FirstMidName': 'Nino', 'LastName': 'Olivetto', 'EnrollmentDate': '2005-09-01' }];
+   
   }
-
-
-
+  
   ngOnInit() {
-
+   
   }
-
+  xoa(a){
+    var x = confirm('Do you delete?');
+    if(x==true){
+      const index=this.employeedata.findIndex(word => word.ID === a)
+      this.employeedata.splice(index,1)
+    }else{
+      return false;
+    }
+  }
 
 }
