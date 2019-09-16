@@ -9,7 +9,7 @@ export class ListstudentsComponent implements OnInit {
 
   public employeedata = [];
   // Pagination parameters.
-  p: number = 10;
+  p: number = 1;
   count: number = 3;
   page: number = 1;
   constructor() {
