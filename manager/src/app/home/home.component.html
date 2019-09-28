@@ -1,0 +1,58 @@
+<html>
+   <body>
+      <div class="container">
+         <nav>
+            <input type="checkbox" id="nav" class="hidden">
+            <label for="nav" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+            </label>
+            <div class="logo">
+               <a href="#">BAPZZBAP</a>
+            </div>
+            <div class="nav-wrapper">
+               <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Overview</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Login</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <div class="login-wrap">
+         <div class="row">
+            <div class="column left">
+               <div class="grid-container">
+                  <div class="item1">
+                     <div class="wrapper">
+                        <div class="card"
+                           *ngFor="let s of Subjects | paginate: { itemsPerPage: itemsperpage, currentPage: curpage }">
+                           <img src="assets/images/logos/{{s.Logo}}" alt="Avatar" style="width:100%">
+                           <div class="container-card">
+                              <h4><b>{{s.Name}}</b></h4>
+                              <p>Architect & Engineer</p>
+                           </div>
+                        </div>
+                        <div>
+                        </div>
+                     </div>
+                     <pagination-controls (pageChange)="curpage = $event" style="text-align: center;"></pagination-controls>
+                  </div>
+               </div>
+            </div>
+            <div class="column right">
+               <div class="item2">
+                  <button type="button" class="list-group-item list-group-item-action active">
+                  <b> Danh mục môn học </b>
+                  </button>
+                  <div class="list-group" *ngFor="let s of Subjects">
+                     <button type="button" class="list-group-item list-group-item-action">{{s.Name}}</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
