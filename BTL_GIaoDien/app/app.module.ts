@@ -37,6 +37,7 @@ import { AskComponent } from './ask/ask.component';
       { path: 'info', component: InfoComponent },
       { path: 'forgotpassword', component: ForgotpasswordComponent },
       { path: 'changepassword', component: ChangepasswordComponent },
+      { path: 'loginmember', component: LoginmemberComponent },
       { path: 'login', component: LoginmemberComponent },
       { path: 'quiz', component: QuizsComponent },
       { path: 'contact', component: ContactComponent },
