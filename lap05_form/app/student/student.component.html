@@ -1,0 +1,28 @@
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Họ và tên</label>
+        <input type="text" [(ngModel)]='sinhvien.hovaten' [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Ngày sinh</label>
+        <input type="date" [(ngModel)]='sinhvien.ngaysinh' [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Giới tính</label>
+        <select class="form-control" [(ngModel)]='sinhvien.gioitinh' [ngModelOptions]="{standalone: true}" ngModel>
+            <option>Nam</option>
+            <option>Nữ</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Điểm</label>
+        <input type="number" [(ngModel)]='sinhvien.diem' [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Học lực</label>
+        <div class="alert alert-success" role="alert">
+            {{kiemtra()}}
+        </div>
+    </div>
+    <button type="button" (click)="kiemtra()" class="btn btn-primary">Tinh</button>
+</form>

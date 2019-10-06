@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col"(click)="OrderBy('name')">Sản Phẩm</th>
+        <th scope="col"(click)="OrderBy('price')">Đơn Giá</th>
+        <th scope="col"(click)="OrderBy('discount')">Giảm Giá</th>
+        <th scope="col"(click)="OrderBy('date')">Ngày</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of list | orderBy: ordername | paginate: { itemsPerPage: itemsperpage, currentPage: curpage }">
+        <td>{{l.name}}</td>
+        <td>{{l.price}}</td>
+        <td>{{l.discount}}</td>
+        <td>{{l.date}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="curpage = $event"></pagination-controls>

@@ -1,0 +1,30 @@
+<div class="card text">
+    <div class="card-header">
+        Tính lương theo tuổi, giới tính
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Họ và tên</label>
+            <input type="text" [(ngModel)]="tt.ten" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Lương</label>
+            <input type="number" [(ngModel)]="tt.luong" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">giới tính:</label>
+            <input type="radio" name="age" value="nam" [(ngModel)]="tt.gtinh" [ngModelOptions]="{standalone: true}"> nam
+            <input type="radio" name="age" value="nu" [(ngModel)]="tt.gtinh" [ngModelOptions]="{standalone: true}"> nữ
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">tuổi</label>
+            <select [(ngModel)]="tt.rate" [ngModelOptions]="{standalone: true}">
+                <option *ngFor='let t of list' value="{{t.rate}}">{{t.age}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="alert alert-success" role="alert">
+                {{tienthuong()}}
+              </div>
+        </div>
+</div>

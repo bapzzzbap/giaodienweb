@@ -1,0 +1,20 @@
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Chieu dai</label>
+        <input type="number" [(ngModel)]='hcn.cd' [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Chieu rong</label>
+        <input type="number" [(ngModel)]='hcn.cr' [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Chu vi</label>
+        <input type="number" [(ngModel)]='hcn.cv' [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Dien tich</label>
+        <input type="number" [(ngModel)]='hcn.dt' [ngModelOptions]="{standalone: true}" class="form-control">
+    </div>
+    <button type="button" (click)="Tinh()" class="btn btn-primary">Tinh</button>
+</form>
+<hr>
