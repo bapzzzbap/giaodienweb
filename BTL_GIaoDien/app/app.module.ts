@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ContactComponent } from './contact/contact.component';
 import { AskComponent } from './ask/ask.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,9 @@ import { AskComponent } from './ask/ask.component';
     AppRoutingModule,
     NgxPaginationModule,
     RouterModule,
+    FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: LoginmemberComponent },
       { path: 'home', component: HomeComponent },
       { path: 'info', component: InfoComponent },
       { path: 'forgotpassword', component: ForgotpasswordComponent },

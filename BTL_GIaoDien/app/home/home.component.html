@@ -25,7 +25,7 @@
                            <a [routerLink]="['/changepassword']">Change Password</a>
                            <a [routerLink]="['/loginmember']">Registration</a>
                            <hr>
-                           <a [routerLink]="['/home']">Log Out</a>
+                           <a [routerLink]="['/loginmember']">Log Out</a>
                            <a [routerLink]="['/loginmember']">Log In</a>
                            <a [routerLink]="['/info']">Update your account</a>
                        </div>
@@ -52,8 +52,6 @@
                      <div>
                      </div>
                   </div>
-                  <pagination-controls (pageChange)="curpage = $event" style="text-align: center;">
-                  </pagination-controls>
                </div>
             </div>
          </div>
