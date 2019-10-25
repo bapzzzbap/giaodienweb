@@ -53,7 +53,7 @@ export class LoginmemberComponent implements OnInit {
     console.log('hit');
   }
 
-  loginUser(e,student: Student) {
+  loginUser(e) {
   	e.preventDefault();
   	console.log(e);
   	var username = e.target.elements[0].value;
@@ -64,6 +64,9 @@ export class LoginmemberComponent implements OnInit {
    // }
   	if(username == this.formStudent.username ||username == this.formStudent.username1 || username == this.formStudent.username2  && password == this.formStudent.password) {
       this.router.navigate(['home']);
+    }
+    else if(username!=this.formStudent.username){
+      alert("Do not have an account");
     }
     else if(password!=this.formStudent.password){
       alert("Wrong Password!");
