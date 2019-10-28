@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AskComponent } from './ask/ask.component';
 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     NgxPaginationModule,
     RouterModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: LoginmemberComponent },
       { path: 'home', component: HomeComponent },
@@ -42,7 +44,7 @@ import { FormsModule } from '@angular/forms';
       { path: 'changepassword', component: ChangepasswordComponent },
       { path: 'loginmember', component: LoginmemberComponent },
       { path: 'login', component: LoginmemberComponent },
-      { path: 'quiz', component: QuizsComponent },
+      { path: 'quiz/:Id', component: QuizsComponent },
       { path: 'contact', component: ContactComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ])

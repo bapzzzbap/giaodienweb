@@ -55,20 +55,8 @@
                         <tr>
                            <td>
                               <h4>{{q.Text}}</h4>
-                              <label class="container-td">One
+                              <label class="container-td"  *ngFor="let c of q.Answers">{{c.Text}}
                               <input type="radio" checked="checked" name="radio">
-                              <span class="checkmark"></span>
-                              </label>
-                              <label class="container-td">Two
-                              <input type="radio" name="radio">
-                              <span class="checkmark"></span>
-                              </label>
-                              <label class="container-td">Three
-                              <input type="radio" name="radio">
-                              <span class="checkmark"></span>
-                              </label>
-                              <label class="container-td">Four
-                              <input type="radio" name="radio">
                               <span class="checkmark"></span>
                               </label>
                            </td>
@@ -88,7 +76,7 @@
                      <b> Danh mục môn học </b>
                      </button>
                      <div class="list-group" *ngFor="let s of Subjects">
-                        <button type="button" class="list-group-item list-group-item-action"><a [routerLink]="['/quiz']">{{s.Name}}</a></button>
+                        <button type="button" class="list-group-item list-group-item-action"><a  [routerLink]="['/quiz',s.Id]">{{s.Name}}</a></button>
                      </div>
                   </div>
                </div>

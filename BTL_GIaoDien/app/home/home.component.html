@@ -18,21 +18,21 @@
                <li><a href="#">Overview</a></li>
                <li><a [routerLink]="['/contact']">Contact</a></li>
                <li>
-                   <div class="dropdown">
-                       <button class="dropbtn"><b>User</b></button>
-                       <div class="dropdown-content">
-                           <a [routerLink]="['/forgotpassword']">Forgot Password</a>
-                           <a [routerLink]="['/changepassword']">Change Password</a>
-                           <a [routerLink]="['/loginmember']">Registration</a>
-                           <hr>
-                           <a [routerLink]="['/loginmember']">Log Out</a>
-                           <a [routerLink]="['/loginmember']">Log In</a>
-                           <a [routerLink]="['/info']">Update your account</a>
-                       </div>
-                   </div>
+                  <div class="dropdown">
+                     <button class="dropbtn"><b>User</b></button>
+                     <div class="dropdown-content">
+                        <a [routerLink]="['/forgotpassword']">Forgot Password</a>
+                        <a [routerLink]="['/changepassword']">Change Password</a>
+                        <a [routerLink]="['/loginmember']">Registration</a>
+                        <hr>
+                        <a [routerLink]="['/loginmember']">Log Out</a>
+                        <a [routerLink]="['/loginmember']">Log In</a>
+                        <a [routerLink]="['/info']">Update your account</a>
+                     </div>
+                  </div>
                </li>
-           </ul>
-        </div>
+            </ul>
+         </div>
       </nav>
    </div>
    <div class="login-wrap">
@@ -43,15 +43,20 @@
                   <div class="wrapper">
                      <div class="card"
                         *ngFor="let s of Subjects | paginate: { itemsPerPage: itemsperpage, currentPage: curpage }">
-                        <a [routerLink]="['/quiz']"><img src="assets/images/logos/{{s.Logo}}" alt="Avatar" style="width:100%"></a>
+                        <a [routerLink]="['/quiz',s.Id]"><img src="assets/images/logos/{{s.Logo}}" alt="Avatar"
+                              style="width:100%"></a>
                         <div class="container-card">
                            <h4><b>{{s.Name}}</b></h4>
                            <p>Architect & Engineer</p>
                         </div>
                      </div>
                      <div>
+
                      </div>
+
                   </div>
+                  <pagination-controls (pageChange)="curpage = $event" style="text-align: center;">
+                  </pagination-controls>
                </div>
             </div>
          </div>
@@ -61,12 +66,16 @@
                   <b> Danh mục môn học </b>
                </button>
                <div class="list-group" *ngFor="let s of Subjects">
-                  <button type="button" class="list-group-item list-group-item-action"><a [routerLink]="['/quiz']">{{s.Name}}</a></button>
+                  <button type="button" class="list-group-item list-group-item-action"><a
+                        [routerLink]="['/quiz',s.Id]">{{s.Name}}</a></button>
                </div>
             </div>
          </div>
+
       </div>
+
    </div>
+
 </body>
 
 </html>
