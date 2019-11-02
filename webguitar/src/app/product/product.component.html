@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="row">
+    <div class="side">
+        <h2>Menu</h2>
+        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+        <ul id="myMenu">
+            <li><a href="#">Guitar</a></li>
+            <li><a href="#">Base</a></li>
+            <li><a href="#">JavaScript</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h2>Fender Stratocaster</h2>
+        <div class="container px-lg-5">
+            <div class="row">
+                <div class="col-4">
+                    <img src="assets/images/{{product.imagesurl}}" class="card-img" alt="...">
+                </div>
+                <div class="col-6">
+                    <h2>{{product.productname}}</h2>
+                    <b>List price:</b> {{product.price}} $<br>
+                    <b>Discount: </b> {{product.discount}}<br>
+                    <b>Your price: </b> 250 $(You save $111)<br>
+                    <div class="section" style="padding-bottom:20px;">
+                        <h6 class="title-attr"><b>Quanity</b></h6>
+                        <div>
+                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                            <input value="1" />
+                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                            <div style="margin: 5px;">
+                                <a [routerLink]="['/yourcart']" class="btn btn-primary">add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Description</h2>
+                    <p>
+                        {{product.description}}
+                    </p>
+                    <ul>
+                        <li *ngFor="let nw of product.newfeature">
+                            {{nw.text}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<div class="row">
+    <div class="side">
+        <h2>Menu</h2>
+        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+        <ul id="myMenu" *ngFor="let l of lists">
+            <li><a [routerLink]="['/product',l.id]">{{l.catename}}</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h2>Fetured products</h2>
+        <div class="container px-lg-4">
+            <div class="row mx-lg-n5" *ngFor="let g of guitar">
+                <div class="col py-3 px-lg-5 border bg-light">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="assets/images/{{g.imagesurl}}" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8" >
+                                <div class="card-body">
+                                    <h5 class="card-title">{{g.productname}}</h5>
+                                    <p class="card-text">{{g.description}}</p>
+                                        <p class="card-text"><b>Price : {{g.price}} $ </b></p>
+                                        <a [routerLink]="['/product',g.id]" class="btn btn-primary">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
