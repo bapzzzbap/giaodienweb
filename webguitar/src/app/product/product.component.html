@@ -28,7 +28,7 @@
                             <input value="1" />
                             <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
                             <div style="margin: 5px;">
-                                <a [routerLink]="['/yourcart']" class="btn btn-primary">add to cart</a>
+                                <a [routerLink]="['/yourcart',{ id:product.id }]" class="btn btn-primary">add to cart</a>
                             </div>
                         </div>
                     </div>
