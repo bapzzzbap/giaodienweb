@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{ActivatedRoute} from '@angular/router';
 import{GuitarService} from '../DAL/guitar.service';
 import { Product } from '../entities/product.entity';
+import { NgModule } from '@angular/core';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
