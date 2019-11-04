@@ -44,7 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'changepassword', component: ChangepasswordComponent },
       { path: 'loginmember', component: LoginmemberComponent },
       { path: 'login', component: LoginmemberComponent },
-      { path: 'quiz/:Id', component: QuizsComponent },
+      { path: 'quiz/:cid', component: QuizsComponent },
       { path: 'contact', component: ContactComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ])
