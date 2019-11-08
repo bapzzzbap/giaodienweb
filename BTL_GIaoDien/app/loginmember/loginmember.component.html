@@ -44,12 +44,16 @@
                     <form>
                     <div class="group">
                         <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" >
+                        <input id="user" type="text" name="usrname" class="input" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" id="mail"  >
                     </div>
+                    <div *ngIf="showCheck"><p style="color: red;" >Tài khoản không tồn tại</p></div>
+                    <div *ngIf="showCheckall"><p style="color: red;" >Chưa nhập tài khoản</p></div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
                         <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
                     </div>
+                    <div *ngIf="showCheck1"><p style="color: red;" >Sai mật khẩu</p></div>
+                    <div *ngIf="showCheckpass"><p style="color: red;" >Chưa nhập mật khẩu</p></div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked>
                         <label for="check"><span class="icon"></span> Keep me Signed in</label>
@@ -64,24 +68,30 @@
                 </form>
                 </div>
                 <div class="sign-up-htm">
+                        <div class="group">
+                                <label for="pass" class="label">Full name</label>
+                                <input id="pass" type="text" class="input" [(ngModel)]="formStudent.fullname" required>
+                                <div *ngIf="showChecksu4"><p style="color: red;" >Chưa nhập họ và tên</p></div>
+  
+                            </div>
                     <div class="group">
                         <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input">
+                        <input id="user" type="text" class="input"  [(ngModel)]="formStudent.username" required>
+                        <div *ngIf="showChecksu1"><p style="color: red;" >Chưa nhập username</p></div>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                        <label for="pass" class="label">Repeat Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="formStudent.password" required>
+                        <div *ngIf="showChecksu2"><p style="color: red;" >Chưa nhập password</p></div>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Email Address</label>
-                        <input id="pass" type="text" class="input">
+                        <input id="pass" type="text" class="input" [(ngModel)]="formStudent.email" required>
+                        <div *ngIf="showChecksu3"><p style="color: red;" >Chưa nhập email</p></div>
+                    
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign Up">
+                        <input type="submit" class="button" value="Sign Up" (click)="studentLogin()">
                     </div>
                     <div class="hr"></div>
                     <div class="foot-lnk">

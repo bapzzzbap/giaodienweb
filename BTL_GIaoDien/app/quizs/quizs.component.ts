@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {ListQuestionService} from '../server/list-question.service';
 import { ActivatedRoute} from '@angular/router';
+import { CountdownComponent } from 'ngx-countdown';
 @Component({
   selector: 'app-quizs',
   templateUrl: './quizs.component.html',
@@ -10,7 +11,6 @@ import { ActivatedRoute} from '@angular/router';
 export class QuizsComponent implements OnInit {
     constructor(private http:HttpClient, private listQuestion: ListQuestionService,private route:ActivatedRoute) { }
     Subjects: any;
-    Subjects1: any;
     quizs: any;
     pid;
     //url='https://test-de763.firebaseio.com/';
@@ -20,8 +20,14 @@ export class QuizsComponent implements OnInit {
     //    return this.http.get(this.configUrl);
 
     //   }
+
   itemsperpage = 1;
   curpage = 1;
+  quiz1 ={
+      "Id": null,
+      "hocluc": null
+  }
+  
 
   ngOnInit() {
    
@@ -38,6 +44,13 @@ export class QuizsComponent implements OnInit {
     this.Subjects= this.Subjects.find(p=>p.Id=== this.pid);
   }
      
+//   kiemtra(){
+//     if(this.quiz1.Id==this.quizs.AnswerId)
+//     this.quizs.hocluc=this.quiz1.Id;
+//     else
+//     this.quizs.hocluc="dau";
+//     return this.quizs.hocluc;
+// }
     }
 
     

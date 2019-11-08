@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { listquizs, quizs } from '../quizs/listquizs';
+import { listsubjects, quizs } from '../quizs/list';
 import { Observable} from 'rxjs';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 @Injectable({
   providedIn: 'root'
 })
 export class ListQuestionService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private af: AngularFireDatabaseModule) { }
   url = 'assets/db/Subjects.json';
 
 
-  getSub(Id:string):Observable<listquizs[]>{
-    return this.http.get<listquizs[]>(this.url);
+  getSub(Id:string):Observable<listsubjects[]>{
+    return this.http.get<listsubjects[]>(this.url);
   }
 
 
@@ -20,4 +21,8 @@ export class ListQuestionService {
     return this.http.get<quizs[]>(`/assets/db/Quizs/`+Id+`.json`);
   }
   
+  // getSubjects():Observable<listquizs[]>{
+  //   return this.af.get<listquizs[]>('/subjects');
+  // }
+
   }

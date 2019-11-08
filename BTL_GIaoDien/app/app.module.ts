@@ -16,6 +16,10 @@ import { AskComponent } from './ask/ask.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
+import { CountdownModule } from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     ForgotpasswordComponent,
     ChangepasswordComponent,
     ContactComponent,
-    AskComponent
+    AskComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     FormsModule,
     HttpClientModule,
+    AngularFireDatabaseModule,
+    CountdownModule,
     RouterModule.forRoot([
       { path: '', component: LoginmemberComponent },
       { path: 'home', component: HomeComponent },

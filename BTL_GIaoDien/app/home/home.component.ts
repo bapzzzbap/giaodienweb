@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { listquizs } from '../quizs/listquizs';
-import {ListQuestionService} from '../server/list-question.service'
+
+import {ListQuestionService} from '../server/list-question.service';
+import { listsubjects } from '../quizs/list';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

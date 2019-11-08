@@ -1,87 +1,89 @@
 <html>
-   <body>
-      <div class="container">
-         <nav>
-            <input type="checkbox" id="nav" class="hidden">
-            <label for="nav" class="nav-btn">
+
+<body>
+   <div class="container">
+      <nav>
+         <input type="checkbox" id="nav" class="hidden">
+         <label for="nav" class="nav-btn">
             <i></i>
             <i></i>
             <i></i>
-            </label>
-            <div class="logo">
-               <a href="#">BAPZZBAP</a>
-            </div>
-            <div class="nav-wrapper">
-               <ul>
-                  <li><a [routerLink]="['/home']">Home</a></li>
-                  <li><a href="#">Overview</a></li>
-                  <li><a [routerLink]="['/contact']">Contact</a></li>
-                  <li>
-                      <div class="dropdown">
-                          <button class="dropbtn"><b>User</b></button>
-                          <div class="dropdown-content">
-                              <a [routerLink]="['/forgotpassword']">Forgot Password</a>
-                              <a [routerLink]="['/changepassword']">Change Password</a>
-                              <a [routerLink]="['/loginmember']">Registration</a>
-                              <hr>
-                              <a [routerLink]="['/home']">Log Out</a>
-                              <a [routerLink]="['/loginmember']">Log In</a>
-                              <a [routerLink]="['/info']">Update your account</a>
-                          </div>
-                      </div>
-                  </li>
-              </ul>
-            </div>
-         </nav>
-      </div>
-      <div class="login-wrap">
-         <div class="row">
-            <div class="column left">
-               <div class="grid-container">
-                  <div class="item1">
-                     <table id="customers"
-                        *ngFor="let q of quizs | paginate: { itemsPerPage: itemsperpage, currentPage: curpage }">
-                        <tr>
-                           <th>
-                                <div class="row">
-                                        <div class="column left1">
-                                            Xây dựng trang web
-                                        </div>
-                                        <div class="column right1">
-                                            <span id="time" style="color: red">05:00</span> minutes!
-                                        </div>
-                                </div></th>
-                        </tr>
-                        <tr>
-                           <td>
-                              <h4>{{q.Text}}</h4>
-                              <label class="container-td"  *ngFor="let c of q.Answers">{{c.Text}}
-                              <input type="radio" checked="checked" name="radio">
-                              <span class="checkmark"></span>
-                              </label>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>Điểm : 0/80</td>
-                        </tr>
-                     </table>
-                     <pagination-controls (pageChange)="curpage = $event" style="text-align: center;">
-                     </pagination-controls>
-                  </div>
-               </div>
-            </div>
-               <div class="column right">
-                  <div class="item2">
-                     <button type="button" class="list-group-item list-group-item-action active">
-                     <b> Danh mục môn học </b>
-                     </button>
-                     <div class="list-group" *ngFor="let s of Subjects">
-                        <button type="button" class="list-group-item list-group-item-action"><a  [routerLink]="['/quiz',s.Id]">{{s.Name}}</a></button>
+         </label>
+         <div class="logo">
+            <a href="#">BAPZZBAP</a>
+         </div>
+         <div class="nav-wrapper">
+            <ul>
+               <li><a [routerLink]="['/home']">Home</a></li>
+               <li><a href="#">Overview</a></li>
+               <li><a [routerLink]="['/contact']">Contact</a></li>
+               <li>
+                  <div class="dropdown">
+                     <button class="dropbtn"><b>User</b></button>
+                     <div class="dropdown-content">
+                        <a [routerLink]="['/forgotpassword']">Forgot Password</a>
+                        <a [routerLink]="['/changepassword']">Change Password</a>
+                        <a [routerLink]="['/loginmember']">Registration</a>
+                        <hr>
+                        <a [routerLink]="['/home']">Log Out</a>
+                        <a [routerLink]="['/loginmember']">Log In</a>
+                        <a [routerLink]="['/info']">Update your account</a>
                      </div>
                   </div>
-               </div>
-            
+               </li>
+            </ul>
          </div>
+      </nav>
+   </div>
+   <div class="login-wrap">
+      <div class="row">
+         <div class="column left">
+            <div class="grid-container">
+               <div class="item1">
+                  <table id="customers">
+                     <tr>
+                        <th>
+                           <div class="row">
+                              <div class="column left1">
+                                 Xây dựng trang web
+                              </div>
+                              <div class="column right1">
+                                 <span id="time" style="color: red"><countdown #countdown  [config]="{leftTime: 300}">$!m!:$!s!</countdown> </span> minutes!
+                              </div>
+                           </div>
+                        </th>
+                     </tr>
+                     <tr *ngFor="let q of quizs | paginate: { itemsPerPage: itemsperpage, currentPage: curpage }">
+                        <td>
+                           <h4>{{q.Text}}</h4>
+                           <label class="container-td" *ngFor="let c of q.Answers">{{c.Text}}
+                               <input type="radio" name="quiz"> <span class="checkmark"></span>
+                           </label>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>Điểm : 0/80</td>
+                     </tr>
+                  </table>
+                  <pagination-controls (pageChange)="curpage = $event" style="text-align: center;">
+                  </pagination-controls>
+               </div>
+            </div>
+         </div>
+         <div class="column right">
+            <div class="item2">
+               <button type="button" class="list-group-item list-group-item-action active">
+                  <b> Danh mục môn học </b>
+               </button>
+               <div class="list-group" *ngFor="let s of Subjects">
+                  <button type="button" class="list-group-item list-group-item-action"><a
+                        [routerLink]="['/quiz',s.Id]">{{s.Name}}</a></button>
+               </div>
+            </div>
+         </div>
+
       </div>
-   </body>
+   </div>
+</body>
+
 </html>
