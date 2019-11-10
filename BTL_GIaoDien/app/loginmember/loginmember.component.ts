@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Student } from './student';
 import { HttpClient } from '@angular/common/http';
 import { ListuserService } from '../server/listuser.service';
+import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 @Component({
   selector: 'app-loginmember',
   templateUrl: './loginmember.component.html',
@@ -62,6 +63,9 @@ export class LoginmemberComponent implements OnInit {
         this.showCheck1=true;
         return this.showCheck=false;
       }
+      if (element.username != this.username && this.password != element.password) {
+        return this.showCheck=true;
+      }
       if (element.username != this.username && this.password=="") {
         this.showCheckall=false;
         this.showCheckpass=false;
@@ -73,7 +77,6 @@ export class LoginmemberComponent implements OnInit {
     //   return this.showCheck=true;
     // }
   }
-
 
 
 
@@ -131,10 +134,10 @@ studentLogin() {
 
 postStudent() {
   let newStudent = {
-    Fullname: this.formStudent.fullname,
-    UserName: this.formStudent.username,
-    Email: this.formStudent.email,
-    Password: this.formStudent.password
+    username: this.formStudent.username,
+    email: this.formStudent.email,
+    password: this.formStudent.password,
+    fullname: this.formStudent.fullname,
   }
   this.http.post("https://cuong-dev1-api.herokuapp.com/studentsTwo", newStudent).subscribe(data => {
     alert("Đăng kí thành công!");
@@ -143,3 +146,4 @@ postStudent() {
 }
 
 }
+

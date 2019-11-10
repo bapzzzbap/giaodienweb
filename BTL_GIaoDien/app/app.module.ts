@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { RouterModule, Routes} from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,10 +17,10 @@ import { AskComponent } from './ask/ask.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { environment } from '../environments/environment';
-import { CountdownModule } from 'ngx-countdown';
+//import { AngularFireModule } from 'angularfire2';
+//import { AngularFireDatabaseModule } from 'angularfire2/database';
+//import { environment } from '../environments/environment';
+//import { CountdownModule } from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,8 @@ import { CountdownModule } from 'ngx-countdown';
     RouterModule,
     FormsModule,
     HttpClientModule,
-    AngularFireDatabaseModule,
-    CountdownModule,
+    //AngularFireDatabaseModule,
+    //CountdownModule,
     RouterModule.forRoot([
       { path: '', component: LoginmemberComponent },
       { path: 'home', component: HomeComponent },

@@ -35,6 +35,15 @@
          </div>
       </nav>
    </div>
+
+   <!-- //dông ho  -->
+
+
+
+
+
+
+
    <div class="login-wrap">
       <div class="row">
          <div class="column left">
@@ -43,30 +52,76 @@
                   <table id="customers">
                      <tr>
                         <th>
-                           <div class="row">
-                              <div class="column left1">
+                           <div class="column left1">
                                  Xây dựng trang web
-                              </div>
-                              <div class="column right1">
-                                 <span id="time" style="color: red"><countdown #countdown  [config]="{leftTime: 300}">$!m!:$!s!</countdown> </span> minutes!
-                              </div>
+                           </div>
+                           <div class="column left2">
+                              Time: <span class="bg-black text-center txtshadow text-white px-2 p-1" id="timer">
+                                 05':00</span>
                            </div>
                         </th>
                      </tr>
-                     <tr *ngFor="let q of quizs | paginate: { itemsPerPage: itemsperpage, currentPage: curpage }">
+                     <tr>
                         <td>
-                           <h4>{{q.Text}}</h4>
-                           <label class="container-td" *ngFor="let c of q.Answers">{{c.Text}}
-                               <input type="radio" name="quiz"> <span class="checkmark"></span>
-                           </label>
+                           <div *ngFor='let ques of quizss|paginate:{itemsPerPage:rowpage,currentPage:page}'>
+                              <h3>{{ques.Text}}</h3>
+                              <div *ngFor="let Ans of ques.Answers">
+                                 <input [(ngModel)]="answers[page-1]" name="{{ques.Id}}" id="{{Ans.Id}}"
+                                    value="{{Ans.Id}}" class="form-check-input" type="radio">
+                                 <label for="{{Ans.Id}}"><span
+                                       style="font-size: 25px; margin: 15px;">{{Ans.Text}}</span></label>
+                              </div>
+                           </div>
+                        </td>
+
+                     </tr>
+                     <tr *ngIf="isDisabled" >
+                        <td>
+
+                           <div style="text-align: center;" class="paga" >
+                              <a class="example_c"(click)='firstPage()'> <button class="bt1"><i
+                                       class="fas fa-fast-backward"></i> </button></a>
+                              <a class="example_c" (click)='prePage()'> <button class="bt1"><i
+                                       class="fas fa-arrow-circle-left"></i> </button></a>
+                              <!-- cong diem -->
+                              <a class="example_c" (click)='nextPage()' (click)="pointTest()"> <button class="bt1"><i
+                                       class="fas fa-arrow-circle-right"></i> </button></a>
+                              <a class="example_c" (click)='lastPage()'> <button class="bt1"> <i
+                                       class="fas fa-fast-forward"></i> </button></a>
+                           </div>
                         </td>
                      </tr>
                      <tr>
-                        <td>Điểm : 0/80</td>
+                        <td>
+                           <div class="column left1">
+                              <span *ngIf="showTime" class="show fade ml-4">
+                                 <button type="button" class="btn txtshadow btn-sm btn-danger" (click)="startTime()"
+                                    style="background: darkorange; padding: 5px; color: #fff;">
+                                    Start
+                                 </button>
+                              </span>
+                              <button class="btn btn-warning"
+                                 style="background: royalblue; padding: 5px; color: #fff;">Quiz</button>
+                              <button class="btn btn-info"
+                                 style="background: royalblue; padding: 5px; color: #fff;">Review</button>
+                              <button class="btn btn-primary" (click)="endTime()"
+                                 style="background: red; padding: 5px; color:#fff;">Submit Quiz</button>
+
+                           </div>
+                           <div class="column left2">
+                                 Tổng số câu hỏi : {{questionCount()}}
+                           </div>
+                        </td>
                      </tr>
                   </table>
-                  <pagination-controls (pageChange)="curpage = $event" style="text-align: center;">
-                  </pagination-controls>
+                  <!-- <pagination-controls (pageChange)="curpage = $event" style="text-align: center;">
+                  </pagination-controls> -->
+                  <div class="text-center" style='width:100px'>
+                  </div>
+                  <h2 *ngIf="showPoint==true">
+                     Điểm: {{point}}
+                  </h2>
+                  <td id="timer-2" class="align-middle"></td>
                </div>
             </div>
          </div>
@@ -82,8 +137,10 @@
             </div>
          </div>
 
+
       </div>
    </div>
+
 </body>
 
 </html>

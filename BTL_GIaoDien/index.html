@@ -7,57 +7,12 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">	
+
 </head>
 
 <body>
   <app-root></app-root>
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDf8tkIvDfL4IYY9xJxKT0N1Pg6lE_zmds",
-    authDomain: "test-de763.firebaseapp.com",
-    databaseURL: "https://test-de763.firebaseio.com",
-    projectId: "test-de763",
-    storageBucket: "test-de763.appspot.com",
-    messagingSenderId: "512263650627",
-    appId: "1:512263650627:web:cdbc156095a6866bd6c3f6",
-    measurementId: "G-ZWXH5WJF1N"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-  <!-- <script>
-    function startTimer(duration, display) {
-      var timer = duration, minutes, seconds;
-      setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-          timer = duration;
-        }
-      }, 1000);
-    }
-
-    window.onload = function () {
-      var fiveMinutes = 60 * 5,
-        display = document.querySelector('#time');
-      startTimer(fiveMinutes, display);
-    };
-  </script> -->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
 </body>
 
 </html>
