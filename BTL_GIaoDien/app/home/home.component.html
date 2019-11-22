@@ -2,38 +2,6 @@
 
 <body>
    <div class="container">
-      <nav>
-         <input type="checkbox" id="nav" class="hidden">
-         <label for="nav" class="nav-btn">
-            <i></i>
-            <i></i>
-            <i></i>
-         </label>
-         <div class="logo">
-            <a href="#">BAPZZBAP</a>
-         </div>
-         <div class="nav-wrapper">
-            <ul>
-               <li><a [routerLink]="['/home']">Home</a></li>
-               <li><a href="#">Overview</a></li>
-               <li><a [routerLink]="['/contact']">Contact</a></li>
-               <li>
-                  <div class="dropdown">
-                     <button class="dropbtn"><b>User</b></button>
-                     <div class="dropdown-content">
-                        <a [routerLink]="['/forgotpassword']">Forgot Password</a>
-                        <a [routerLink]="['/changepassword']">Change Password</a>
-                        <a [routerLink]="['/loginmember']">Registration</a>
-                        <hr>
-                        <a [routerLink]="['/loginmember']">Log Out</a>
-                        <a [routerLink]="['/loginmember']">Log In</a>
-                        <a [routerLink]="['/info']">Update your account</a>
-                     </div>
-                  </div>
-               </li>
-            </ul>
-         </div>
-      </nav>
    </div>
    <div class="login-wrap">
       <div class="row">

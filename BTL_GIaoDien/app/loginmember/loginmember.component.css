@@ -214,9 +214,7 @@ nav ul li a:hover {
 	max-width:525px;
 	min-height:670px;
 	position:relative;
-	background-color:#FFF;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-	margin-top:100px;
+	background-color:#FFF;	margin-top:100px;
 }
 .login-html{
 	width:100%;

@@ -1,38 +1,6 @@
 <html>
 <body>
     <div class="container">
-        <nav>
-            <input type="checkbox" id="nav" class="hidden">
-            <label for="nav" class="nav-btn">
-                <i></i>
-                <i></i>
-                <i></i>
-            </label>
-            <div class="logo">
-                <a href="#">BAPZZBAP</a>
-            </div>
-            <div class="nav-wrapper">
-                <ul>
-                    <li><a [routerLink]="['/home']">Home</a></li>
-                    <li><a href="#">Overview</a></li>
-                    <li><a [routerLink]="['/contact']">Contact</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="dropbtn"><b>User</b></button>
-                            <div class="dropdown-content">
-                                <a [routerLink]="['/forgotpassword']">Forgot Password</a>
-                                <a [routerLink]="['/changepassword']">Change Password</a>
-                                <a [routerLink]="['/loginmember']">Registration</a>
-                                <hr>
-                                <a [routerLink]="['/loginmember']">Log Out</a>
-                                <a [routerLink]="['/loginmember']">Log In</a>
-                                <a [routerLink]="['/info']">Update your account</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
     </div>
     <div class="login-wrap">
         <div class="login-html">
@@ -90,11 +58,20 @@
                     
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign Up" (click)="studentLogin()">
+                        <label for="birthday" class="label">Birthday</label>
+                        <input id="birthday" type="date" class="input" [(ngModel)]="formStudent.birthday" required>
+                        <div *ngIf="showChecksu3"><p style="color: red;" >Chưa nhập ngày sinh</p></div>  
                     </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#forgot">Forgot Password?</a>
+                    <div class="group">
+                        <label for="birthday" class="label">Gender</label>
+                        <select style="width: 100%; padding: 5px;" [(ngModel)]="formStudent.gender">
+                            <option value="volvo" value="true">Nam</option>
+                            <option value="saab" value="false">Nữ</option>
+                        </select>
+                        <div *ngIf="showChecksu3"><p style="color: red;" >Chưa nhập giới tính</p></div>  
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up" (click)="studentLogin()">
                     </div>
                 </div>
 

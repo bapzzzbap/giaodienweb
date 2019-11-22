@@ -132,6 +132,7 @@ id
   endTime() {
     this.resultPoint = false;
     this.showPoint = true;
+    this. isDisabled = false;
     clearInterval(this.interval);
     document.getElementById('timer-2').innerHTML = this.convertTime(this.counter);
     document.getElementById('result').style.display = 'block';

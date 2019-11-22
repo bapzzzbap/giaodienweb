@@ -4,6 +4,7 @@ import { Student } from './student';
 import { HttpClient } from '@angular/common/http';
 import { ListuserService } from '../server/listuser.service';
 import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
+import { DataService } from '../server/data.service';
 @Component({
   selector: 'app-loginmember',
   templateUrl: './loginmember.component.html',
@@ -22,7 +23,7 @@ export class LoginmemberComponent implements OnInit {
   showChecksu2: boolean = false;
   showChecksu3: boolean = false;
   showChecksu4: boolean = false;
-  constructor(private router: Router, private http: HttpClient, private listStudents: ListuserService) { }
+  constructor(private router: Router, private http: HttpClient, private listStudents: ListuserService,private dss:DataService) { }
   configUrl='https://cuong-dev1-api.herokuapp.com/studentsTwo';
   Students: any;
   getConfig() {
@@ -34,7 +35,7 @@ export class LoginmemberComponent implements OnInit {
       this.Students = data
       console.log(data)
     })
-
+    
     //dang ki
     this.listStudents.getStudents().subscribe(data => {
       this.listStudent = data;
@@ -42,7 +43,8 @@ export class LoginmemberComponent implements OnInit {
   }
 
   check() {
-
+    
+    //this.quiz.checkdangnhap=true;
     this.Students.forEach(element => {
     
       if (this.username == null && this.password == null )                                  
@@ -54,18 +56,23 @@ export class LoginmemberComponent implements OnInit {
         this.showCheckpass=true;
         return this.showCheckall=false; 
       } 
-      if (element.username == this.username && element.password == this.password) {
-        this.router.navigate(["/home"])
-        alert('Wellcome '+ element.fullname)
-        return true;
-      }
       if (element.username == this.username && this.password != element.password) {
         this.showCheck1=true;
+        this.showCheckpass=false;
         return this.showCheck=false;
       }
       if (element.username != this.username && this.password != element.password) {
-        return this.showCheck=true;
+        return this.showCheck=false;
       }
+      if (element.username == this.username && element.password == this.password) {
+        this.dss.checkdangnhap=true;
+         this.dss.username=element.username;
+        this.router.navigate(["/home"]);
+        alert('Wellcome '+ element.fullname);
+        return true;
+      }
+     
+     
       if (element.username != this.username && this.password=="") {
         this.showCheckall=false;
         this.showCheckpass=false;
@@ -91,7 +98,9 @@ formStudent = {
   username: null,
   email: null,
   password: null,
-  fullname:null
+  fullname:null,
+  birthday:null,
+  gender:true
 }
 
 
@@ -119,7 +128,8 @@ studentLogin() {
   this.listStudent.forEach(item => {
     if (this.formStudent.username == item.username) {
       alert("username da duoc dang ky!");
-      return check = false;;
+      check = false
+      return ;
     }
     if (this.formStudent.email == item.email) {
       alert("email da duoc dang ky!");
@@ -138,6 +148,8 @@ postStudent() {
     email: this.formStudent.email,
     password: this.formStudent.password,
     fullname: this.formStudent.fullname,
+    gender: this.formStudent.gender,
+    birthday: this.formStudent.birthday
   }
   this.http.post("https://cuong-dev1-api.herokuapp.com/studentsTwo", newStudent).subscribe(data => {
     alert("Đăng kí thành công!");

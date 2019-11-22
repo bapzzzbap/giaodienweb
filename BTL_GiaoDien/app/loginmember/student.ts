@@ -3,7 +3,7 @@ export class Student {
     password : string;
     fullname : string;
     email : string;
-    gender: string;
+    gender: true;
     birthday: string;
     schoolfee: string;
     marks: string;
