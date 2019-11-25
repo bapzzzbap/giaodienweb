@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   exit() {
     this.ds.checkdangnhap = false;
     alert('Ban da dang xuat')
-    this.router.navigate(['/dangnhap'])
+    this.router.navigate(['/loginmember'])
   }
 }
 

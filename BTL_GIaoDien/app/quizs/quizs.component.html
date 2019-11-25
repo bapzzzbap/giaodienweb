@@ -4,14 +4,6 @@
    <div class="container">
    </div>
 
-   <!-- //dông ho  -->
-
-
-
-
-
-
-
    <div class="login-wrap">
       <div class="row">
          <div class="column left">
@@ -24,7 +16,7 @@
                                  Xây dựng trang web
                            </div>
                            <div class="column left2">
-                              Time: <span class="bg-black text-center txtshadow text-white px-2 p-1" id="timer">
+                              Time: <span class="bg-black text-center txtshadow text-white px-2 p-1" id="timer" style="color: red;">
                                  05':00</span>
                            </div>
                         </th>
@@ -45,7 +37,6 @@
                      </tr>
                      <tr *ngIf="isDisabled" >
                         <td>
-
                            <div style="text-align: center;" class="paga" >
                               <a class="example_c"(click)='firstPage()'> <button class="bt1"><i
                                        class="fas fa-fast-backward"></i> </button></a>
@@ -68,10 +59,6 @@
                                     Start
                                  </button>
                               </span>
-                              <button class="btn btn-warning"
-                                 style="background: royalblue; padding: 5px; color: #fff;">Quiz</button>
-                              <button class="btn btn-info"
-                                 style="background: royalblue; padding: 5px; color: #fff;">Review</button>
                               <button class="btn btn-primary" (click)="endTime()"
                                  style="background: red; padding: 5px; color:#fff;">Submit Quiz</button>
 
@@ -82,8 +69,6 @@
                         </td>
                      </tr>
                   </table>
-                  <!-- <pagination-controls (pageChange)="curpage = $event" style="text-align: center;">
-                  </pagination-controls> -->
                   <div class="text-center" style='width:100px'>
                   </div>
                   <h2 *ngIf="showPoint==true">
@@ -100,7 +85,7 @@
                </button>
                <div class="list-group" *ngFor="let s of Subjects">
                   <button type="button" class="list-group-item list-group-item-action"><a
-                        [routerLink]="['/quiz',s.Id]">{{s.Name}}</a></button>
+                        [routerLink]="['/quiz',s.Id]" (click)="check()">{{s.Name}}</a></button>
                </div>
             </div>
          </div>

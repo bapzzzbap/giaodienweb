@@ -259,3 +259,39 @@ nav ul li a:hover {
           text-decoration: none;
           color: #000;
     }
+    
+
+    .foot-lnk{
+	text-align:center;
+}
+
+
+
+button {
+    overflow: visible;
+  }
+  
+  button, select {
+    text-transform: none;
+  }
+  
+  button, input, select, textarea {
+    color: #5A5A5A;
+    font: inherit;
+    margin: 0;
+  }
+  
+  input {
+    line-height: normal;
+  }
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  #login-container {
+    max-width: 768px;
+    margin: 60px auto;
+    position: relative;
+  }
+  

@@ -11,7 +11,7 @@
                   <div class="wrapper">
                      <div class="card"
                         *ngFor="let s of Subjects | paginate: { itemsPerPage: itemsperpage, currentPage: curpage }">
-                        <a [routerLink]="['/quiz',s.Id]"><img src="assets/images/logos/{{s.Logo}}" alt="Avatar"
+                        <a [routerLink]="['/quiz',s.Id]" (click)="check()"><img src="assets/images/logos/{{s.Logo}}" alt="Avatar"
                               style="width:100%"></a>
                         <div class="container-card">
                            <h4><b>{{s.Name}}</b></h4>
@@ -36,7 +36,7 @@
                </button>
                <div class="list-group" *ngFor="let s of Subjects">
                   <button type="button" class="list-group-item list-group-item-action"><a
-                        [routerLink]="['/quiz',s.Id]">{{s.Name}}</a></button>
+                        [routerLink]="['/quiz',s.Id]" (click)="check()">{{s.Name}}</a></button>
                </div>
             </div>
          </div>

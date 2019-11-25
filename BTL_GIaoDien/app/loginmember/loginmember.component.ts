@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Student } from './student';
 import { HttpClient } from '@angular/common/http';
 import { ListuserService } from '../server/listuser.service';
-import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 import { DataService } from '../server/data.service';
 @Component({
   selector: 'app-loginmember',
@@ -35,13 +33,11 @@ export class LoginmemberComponent implements OnInit {
       this.Students = data
       console.log(data)
     })
-    
     //dang ki
     this.listStudents.getStudents().subscribe(data => {
       this.listStudent = data;
     });
   }
-
   check() {
     
     //this.quiz.checkdangnhap=true;
@@ -67,11 +63,12 @@ export class LoginmemberComponent implements OnInit {
       if (element.username == this.username && element.password == this.password) {
         this.dss.checkdangnhap=true;
          this.dss.username=element.username;
+         this.dss.id=element.id;
         this.router.navigate(["/home"]);
         alert('Wellcome '+ element.fullname);
+        
         return true;
       }
-     
      
       if (element.username != this.username && this.password=="") {
         this.showCheckall=false;

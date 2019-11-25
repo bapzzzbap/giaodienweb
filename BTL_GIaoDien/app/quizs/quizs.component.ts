@@ -32,10 +32,8 @@ export class QuizsComponent implements OnInit {
   showPoint = false;
   showStart = false;
   isDisabled = false;
-  // itemsperpage = 1;
-  // curpage = 1;
-
-
+  time='5:00';
+  kiemtra=true;
 id
 
 
@@ -84,7 +82,7 @@ id
     this.page = this.quizss.length;
   }
   dongho() {
-    var minute = 50;
+    var minute = 5;
     var second = 0;
     var clear = setInterval(function () {
       if (minute == 0 && second == 0) {
@@ -135,14 +133,21 @@ id
     this. isDisabled = false;
     clearInterval(this.interval);
     document.getElementById('timer-2').innerHTML = this.convertTime(this.counter);
-    document.getElementById('result').style.display = 'block';
-    document.getElementById('training').style.display = 'none';
   }
   questionCount(){
     return this.quizss.length;
   }
   nameQuestion(){
     return this.Subjects[1].Name;
+  }
+  check(){
+    this.kiemtra=false;
+    alert('Bạn muốn thi môn khác ?');
+    this.endTime();
+    this.showPoint=false;
+    this.showTime = true;
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('training').style.display = 'none';
   }
 }
 

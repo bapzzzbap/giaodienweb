@@ -1,38 +1,7 @@
 <html>
 <body>
     <div class="container">
-        <nav>
-            <input type="checkbox" id="nav" class="hidden">
-            <label for="nav" class="nav-btn">
-                <i></i>
-                <i></i>
-                <i></i>
-            </label>
-            <div class="logo">
-                <a href="#">BAPZZBAP</a>
-            </div>
-            <div class="nav-wrapper">
-              <ul>
-                <li><a [routerLink]="['/home']">Home</a></li>
-                <li><a href="#">Overview</a></li>
-                <li><a [routerLink]="['/contact']">Contact</a></li>
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn"><b>User</b></button>
-                        <div class="dropdown-content">
-                            <a [routerLink]="['/forgotpassword']">Forgot Password</a>
-                            <a [routerLink]="['/changepassword']">Change Password</a>
-                            <a [routerLink]="['/loginmember']">Registration</a>
-                            <hr>
-                            <a [routerLink]="['/loginmember']">Log Out</a>
-                            <a [routerLink]="['/loginmember']">Log In</a>
-                            <a [routerLink]="['/info']">Update your account</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            </div>
-        </nav>
+
     </div>
     <div class="login-wrap">
         <div id="login-container">
@@ -47,31 +16,23 @@
             </div>
             <form action="#" method="post" id="contact_form">
               <div class="name">
-                <label for="name"></label>
-                <input type="text" placeholder="Full Name" name="name" id="name_input" required>
+                <label for="name">Họ và tên</label>
+                <input type="text" [(ngModel)]="loginstudent.fullname" [ngModelOptions]="{standalone: true}" name="name" id="name_input" required>
               </div>
               <div class="email">
-                <label for="email"></label>
-                <input type="email" placeholder="Email" name="email" id="email_input" required>
-              </div>
-              <div class="telephone">
-                <label for="name"></label>
-                <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+                <label for="email">Email</label>
+                <input type="email" [(ngModel)]="loginstudent.email" [ngModelOptions]="{standalone: true}" name="email" id="email_input" required>
               </div>
               <div class="date">
-                <label for="name">DATE</label>
-                <input type="date" name="date" id="date_input" value="1980-08-26" required>
+                <label for="name">Ngày sinh</label>
+                <input type="text" name="text" [(ngModel)]="loginstudent.birthday" [ngModelOptions]="{standalone: true}" required>
               </div>
-              <div class="subject">
-                <label for="subject"></label>
-                <select placeholder="Subject line" name="subject" id="subject_input" required>
-                  <option disabled hidden selected>Gender</option>
-                  <option>Boy</option>
-                  <option>Girl</option>
-                </select>
-              </div>
+              <div class="email">
+                  <label for="email">Giới Tính</label>
+                  <input type="email" [(ngModel)]="loginstudent.gender" value="{{xuat()}}" required>
+                </div>
               <div class="submit">
-                <input type="submit" value="Submit" id="form_button" />
+                <input type="submit"  value="Submit" id="form_button" />
               </div>
             </form><!-- // End form -->
           </div><!-- // End #container -->

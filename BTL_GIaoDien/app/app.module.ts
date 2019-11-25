@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { RouterModule, Routes} from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,13 +12,9 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ContactComponent } from './contact/contact.component';
 import { AskComponent } from './ask/ask.component';
-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-//import { AngularFireModule } from 'angularfire2';
-//import { AngularFireDatabaseModule } from 'angularfire2/database';
-//import { environment } from '../environments/environment';
-//import { CountdownModule } from 'ngx-countdown';
+
 
 @NgModule({
   declarations: [
@@ -41,10 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     FormsModule,
     HttpClientModule,
-    //AngularFireDatabaseModule,
-    //CountdownModule,
     RouterModule.forRoot([
-      { path: '', component: LoginmemberComponent },
+      { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'info', component: InfoComponent },
       { path: 'forgotpassword', component: ForgotpasswordComponent },
@@ -53,10 +45,12 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'login', component: LoginmemberComponent },
       { path: 'quiz/:cid', component: QuizsComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'overview', component: AskComponent },
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
